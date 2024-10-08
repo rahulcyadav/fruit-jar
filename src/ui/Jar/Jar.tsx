@@ -8,9 +8,9 @@ import {
   ListItemIcon,
 } from "@mui/material";
 import { PieChart } from "@mui/x-charts/PieChart";
-import { Fruit } from "@/app/lib/definitions";
 import { PieValueType } from "@mui/x-charts";
 import CircleIcon from "@mui/icons-material/Circle";
+import { Fruit } from "../../lib/definitions";
 
 interface JarProps {
   jarFruits: Fruit[];
@@ -19,7 +19,7 @@ interface JarProps {
 const Jar: React.FC<JarProps> = ({ jarFruits }) => {
   const totalCalories = jarFruits.reduce(
     (total, fruit) => total + fruit.nutritions.calories,
-    0,
+    0
   );
 
   const pieData: PieValueType[] = jarFruits.reduce((acc, fruit) => {
