@@ -45,10 +45,8 @@ const FruitList: React.FC<FruitListProps> = ({
   onAddGroupToJar,
 }) => {
   const groupedFruits: GroupedFruits = groupFruits(fruits);
-  // console.log(groupedFruits, groupBy);
   console.log(groupBy !== "none" && Object.keys(groupedFruits[groupBy]));
 
-  // return undefined;
   return (
     <>
       {groupBy === "none" ? (
@@ -61,11 +59,6 @@ const FruitList: React.FC<FruitListProps> = ({
               sx={{
                 paddingX: 2,
                 paddingY: 1,
-                // border: `1px solid rgba(0, 0, 0, .125)`,
-                // borderTop: "none",
-                // "&:first-child": {
-                //   border: `1px solid rgba(0, 0, 0, .125)`,
-                // },
               }}
               divider={index !== fruits.length - 1}
             >
@@ -89,10 +82,6 @@ const FruitList: React.FC<FruitListProps> = ({
             elevation={0}
             square
             sx={{
-              // border: `1px solid rgba(0, 0, 0, .125)`,
-              // "&::before": {
-              //   display: "none",
-              // },
               "&:not(:last-child)": {
                 borderBottom: 0,
               },

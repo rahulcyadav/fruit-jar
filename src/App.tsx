@@ -1,5 +1,5 @@
 import { AppBar, Box, Typography } from "@mui/material";
-import MainSection from "./MainSection";
+import AppBody from "./AppBody";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             Fruit Jar App
           </Typography>
         </AppBar>
-        <MainSection />
+        <AppBody />
         <Box component="footer" padding={2}>
           <Typography align="center" color="textSecondary">
             Developed by Rahul

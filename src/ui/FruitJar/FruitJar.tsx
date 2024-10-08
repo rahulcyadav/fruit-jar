@@ -12,17 +12,17 @@ import { PieValueType } from "@mui/x-charts";
 import CircleIcon from "@mui/icons-material/Circle";
 import { Fruit } from "../../lib/definitions";
 
-interface JarProps {
-  jarFruits: Fruit[];
+interface FruitJarProps {
+  fruits: Fruit[];
 }
 
-const Jar: React.FC<JarProps> = ({ jarFruits }) => {
-  const totalCalories = jarFruits.reduce(
+const FruitJar: React.FC<FruitJarProps> = ({ fruits }) => {
+  const totalCalories = fruits.reduce(
     (total, fruit) => total + fruit.nutritions.calories,
     0
   );
 
-  const pieData: PieValueType[] = jarFruits.reduce((acc, fruit) => {
+  const pieData: PieValueType[] = fruits.reduce((acc, fruit) => {
     const existing = acc.find((item) => item.id === fruit.id);
     if (existing) {
       existing.value += fruit.nutritions.calories;
@@ -51,9 +51,9 @@ const Jar: React.FC<JarProps> = ({ jarFruits }) => {
       >
         <Box flexGrow={1} flexBasis={"50%"}>
           <Typography variant="h6">Total Calories: {totalCalories}</Typography>
-          {jarFruits.length ? (
+          {fruits.length ? (
             <List disablePadding>
-              {jarFruits.map((fruit, index) => (
+              {fruits.map((fruit, index) => (
                 <ListItem
                   key={fruit.id}
                   disableGutters
@@ -67,7 +67,7 @@ const Jar: React.FC<JarProps> = ({ jarFruits }) => {
                       border: `1px solid rgba(0, 0, 0, .125)`,
                     },
                   }}
-                  divider={index !== jarFruits.length - 1}
+                  divider={index !== fruits.length - 1}
                 >
                   <ListItemIcon>
                     <CircleIcon />
@@ -95,7 +95,6 @@ const Jar: React.FC<JarProps> = ({ jarFruits }) => {
                 data: pieData,
               },
             ]}
-            // width={600}
             height={400}
           />
         </Box>
@@ -104,4 +103,4 @@ const Jar: React.FC<JarProps> = ({ jarFruits }) => {
   );
 };
 
-export default Jar;
+export default FruitJar;

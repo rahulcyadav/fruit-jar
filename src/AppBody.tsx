@@ -16,12 +16,12 @@ import {
 } from "@mui/material";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import FruitDataDisplay from "./FruitDataDisplay";
 import { Fruit, GroupByKey } from "./lib/definitions";
-import Jar from "./ui/Jar/Jar";
 import { groupByList } from "./lib/constants";
+import FruitDataDisplay from "./ui/FruitDataDisplay";
+import FruitJar from "./ui/FruitJar";
 
-export default function MainSection() {
+export default function AppBody() {
   const [groupBy, setGroupBy] = useState<GroupByKey | "none">("none");
   const [view, setView] = useState<"grid" | "list">("list");
   const [jarFruits, setJarFruits] = useState<Fruit[]>([]);
@@ -148,7 +148,7 @@ export default function MainSection() {
         height="100%"
         gap={1}
       >
-        <Jar jarFruits={jarFruits} />
+        <FruitJar fruits={jarFruits} />
       </Grid2>
     </Grid2>
   );

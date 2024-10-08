@@ -1,9 +1,9 @@
 "use client";
 import useSWR from "swr";
-import { Fruit, GroupByKey } from "./lib/definitions";
-import { fetchFruitsMock } from "./lib/fetchFruits";
-import FruitGrid from "./ui/FruitList/FruitGrid";
-import FruitList from "./ui/FruitList/FruitList";
+import { Fruit, GroupByKey } from "../../lib/definitions";
+import { fetchFruitsMock } from "../../lib/fetchFruits";
+import FruitGrid from "./FruitGrid";
+import FruitList from "./FruitList";
 
 export default function FruitDataDisplay({
   groupBy,
